@@ -1,4 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap');
+
 body {
 	background: url(images/background-for-project-1.1.png);
 	margin: 0 auto;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.gamearea {
+	width: 85%;
+	margin:0 auto;
+	text-align: center;
+    background-color: rgba(0, 0, 102, 0.2);
+    margin-top: 4em;
+}
+
+#headergame{
+    font-size: 3em;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: white;
+    padding-top: 0.3em;
+
 }
