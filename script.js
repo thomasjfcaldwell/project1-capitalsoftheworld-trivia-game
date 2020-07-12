@@ -5,3 +5,4 @@ answerButton.addEventListener('click', answerButtonHandler);
 function answerButtonHandler(event) {}
 
 
+let 

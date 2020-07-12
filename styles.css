@@ -1,25 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap');
 
 body {
+	margin: auto 0;
 	background: url(images/background-for-project-1.1.png);
-	margin: 0 auto;
-    width: 100%;
-    font-family: 'Roboto', sans-serif;
+	width: 100%;
+	font-family: 'Roboto', sans-serif;
 }
 
-.gamearea {
-	width: 85%;
-	margin:0 auto;
+#headergame {
+	font-size: 2em;
 	text-align: center;
-    background-color: rgba(0, 0, 102, 0.2);
-    margin-top: 4em;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: grey;
+}
+#triviaheader {
+	margin-top: 2em;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 75%;
 }
 
-#headergame{
-    font-size: 3em;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: white;
-    padding-top: 0.3em;
+.toparea {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+.topbuttons{
+	margin-top: 1em;
+	padding: 1.5em;
+	font-size: 1em;
+	text-transform: uppercase;
+	flex: 1;
+	text-align: center;
+	text-decoration: underline;
+}
+.question{
+	border: 2px black solid;
+	margin: 2em;
+	padding: 3em;
+	align-items: center;
+	justify-content: center;
 
+}
+
+.answerbuttons{
+	display: grid;
+	margin: 0 auto;
+	grid-template-columns: 45%  45%;
+	padding: 1em;
+	grid-gap: 2em;
 }
