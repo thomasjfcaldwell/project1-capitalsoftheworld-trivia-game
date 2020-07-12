@@ -7,26 +7,37 @@
 		<title>Capital Cities Of The World</title>
 	</head>
 	<body>
-			<header>
-				<h1 id="headergame">Capital Cities Of The World</h1>
-				<img id="triviaheader" src="images/trivia-game-heading.1.png" alt="game heading" />
-			</header>
-			<div class="toparea">
-				<div class = "topbuttons" id= "score">score</div>
-				<div class = "topbuttons" id ="question number">question</div>
-				<div class = "topbuttons" id ="reset button">Reset</div>
+		<header>
+			<h1 id="headergame">Capital Cities Of The World</h1>
+			<img
+				id="triviaheader"
+				src="images/trivia-game-heading.1.png"
+				alt="game heading"
+			/>
+		</header>
+		<div id="startbutton"></div>
+		<div class="toparea">
+			<div class="topbuttons" id="score">score</div>
+			<div class="topbuttons" id="question number">question</div>
+			<div class="topbuttons" id="reset button">Reset</div>
+		</div>
+
+		<section class="question">
+			<h1>Is the Capital of</h1>
+		</section>
+
+		<section class="answerbuttons">
+			<button class="buttons" id="A" data-set="A">A</button>
+			<button class="buttons" id="B" data-set="B">B</button>
+			<button class="buttons" id="C" data-set="C">C</button>
+			<button class="buttons" id="D" data-set="D">D</button>
+		</section>
+
+		<section>
+			<div class="countdowntimer">
+				<h1 id="counter">10</h1>
 			</div>
-
-			<section class="question">
-				<h1>Is the Capital of</h1>
-			</section>
-
-			<section class="answerbuttons">
-				<button class="buttons" id="A" data-set="A">A</button>
-				<button class="buttons" id="B" data-set="B">B</button>
-				<button class="buttons" id="C" data-set="C">C</button>
-				<button class="buttons" id="D" data-set="D">D</button>
-			</section>
+		</section>
 
 		<script src="script.js"></script>
 	</body>
