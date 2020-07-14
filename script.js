@@ -38,12 +38,12 @@ fetch('https://ajayakv-rest-countries-v1.p.rapidapi.com/rest/v1/all', {
 	});
 //console.log(countriesCapitals);
 // This button will invoke the first question
-let startButton = document.getElementById('startbutton');
+let startButton = document.querySelector('.startbutton');
 
 startButton.addEventListener('click', getGameStarted);
 
 function getGameStarted(event) {
-	alert('Lets go!');
+	startButton.style.display = 'none';
 }
 //
 
@@ -55,7 +55,7 @@ function getGameStarted(event) {
 function getQuestion() {
 	const getCapitalForQuestion = document.querySelector('.CapitalCity');
 
-	getCapitalForQuestion.innerHTML = `${countriesCapitals[99].capital} is the capital of`;
+	getCapitalForQuestion.innerHTML = `${countriesCapitals[0].capital} is the capital of`;
 
 	//for (let i = 0; i < countriesCapitals.capitals.length; i++) {}
 }
@@ -75,12 +75,32 @@ function getAnswerOptions() {
 
 //
 
-// this function will reconize if the the question was correctly answered
+// this function will reconize what button was pressed  if the the question was correctly answered
 
 // players choice is === to the correct answer
 
-let questionAnswered = true;
-function selectAnswer() {}
+//let questionAnswered = true;
+
+const answer = document.querySelectorAll('.buttons');
+
+answer.addEventListener('click', selectedAnswer);
+
+function selectedAnswer(event) {
+	const buttonClicked = event.target.data - set;
+
+	if (buttonClicked === 'A') {
+		style.background = 'red';
+	}
+	if (buttonClicked === 'B') {
+		style.background = 'blue';
+	}
+	if (buttonClicked === 'C') {
+		style.background = 'green';
+	}
+	if (buttonClicked === 'D') {
+		style.background = 'yellow';
+	}
+}
 
 //
 
@@ -90,16 +110,13 @@ function selectAnswer() {}
 let scoreKeeper = 0;
 
 function keepScore() {
-	if( questionAnswered = true){
-
-        scoreKeeper += 10;
-        document.getElementById('score').innerHTML = score;
-
-    }else{
-
-        scoreKeeper += 0;
+	if ((questionAnswered = true)) {
+		scoreKeeper += 10;
 		document.getElementById('score').innerHTML = score;
-    }
+	} else {
+		scoreKeeper += 0;
+		document.getElementById('score').innerHTML = score;
+	}
 }
 
 //

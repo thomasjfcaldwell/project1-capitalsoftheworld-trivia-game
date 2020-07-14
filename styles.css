@@ -60,7 +60,7 @@ body {
 	box-sizing: border-box;
 }
 
-#startbutton {
+.startbutton {
 	border: 2px black solid;
 	width: 25%;
 	margin: auto;
