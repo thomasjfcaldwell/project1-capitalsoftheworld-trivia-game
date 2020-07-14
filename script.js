@@ -2,6 +2,10 @@ let player;
 
 let url = 'https://ajayakv-rest-countries-v1.p.rapidapi.com/rest/v1/all';
 
+let countries = [];
+
+let countriesCapitals = [];
+
 fetch('https://ajayakv-rest-countries-v1.p.rapidapi.com/rest/v1/all', {
 	method: 'GET',
 	headers: {
@@ -10,29 +14,64 @@ fetch('https://ajayakv-rest-countries-v1.p.rapidapi.com/rest/v1/all', {
 	},
 })
 	.then((response) => {
-		//console.log(response).name;
+		return response.json();
+	})
+	.then((response) => {
+		countries = response;
+		for (country of countries) {
+			//console.log(country);
+			let pair = {
+				cont: country.name,
+				capital: country.capital,
+			};
+			countriesCapitals.push(pair);
+			//console.log(pair.capital);
+		}
+	})
+	.then((reponse) => {
+		getQuestion();
+		getAnswerOptions();
+		countDown();
 	})
 	.catch((err) => {
 		//console.log(err);
 	});
-
+//console.log(countriesCapitals);
 // This button will invoke the first question
 let startButton = document.getElementById('startbutton');
 
 startButton.addEventListener('click', getGameStarted);
 
 function getGameStarted(event) {
-	console.log('ready');
+	alert('Lets go!');
 }
 //
 
 // These function will bring in 4 different answers- 1 being the correct answer and the question
-const question = document.querySelector('CapitalCity');
 
-const choicesAnswers = Array.from(document.getElementsByClassName('buttons'));
-function getQuestion() {}
+//const choicesAnswers = Array.from(document.getElementsByClassName('buttons'));
+//console.log(countriesCapitals);
 
-function getAnswerOptions() {}
+function getQuestion() {
+	const getCapitalForQuestion = document.querySelector('.CapitalCity');
+
+	getCapitalForQuestion.innerHTML = `${countriesCapitals[99].capital} is the capital of`;
+
+	//for (let i = 0; i < countriesCapitals.capitals.length; i++) {}
+}
+//getQuestion()
+
+function getAnswerOptions() {
+	let answerA = document.querySelector('#A');
+	let answerB = document.querySelector('#B');
+	let answerC = document.querySelector('#C');
+	let answerD = document.querySelector('#D');
+
+	answerA.innerHTML = `${countriesCapitals[0].cont}`;
+	answerB.innerHTML = `${countriesCapitals[120].cont}`;
+	answerC.innerHTML = `${countriesCapitals[96].cont}`;
+	answerD.innerHTML = `${countriesCapitals[200].cont}`;
+}
 
 //
 
@@ -49,8 +88,18 @@ function selectAnswer() {}
 // if question is answered correctly increment by 1
 
 let scoreKeeper = 0;
+
 function keepScore() {
-	//if (i = true; i++)
+	if( questionAnswered = true){
+
+        scoreKeeper += 10;
+        document.getElementById('score').innerHTML = score;
+
+    }else{
+
+        scoreKeeper += 0;
+		document.getElementById('score').innerHTML = score;
+    }
 }
 
 //
@@ -64,8 +113,13 @@ function keepScore() {
 // dont display
 //}
 
-let gameFinshed = 0;
-function endGame() {}
+function endGame() {
+	if (scoreKeeper > 15) {
+		return 'Well done you Win!';
+	} else {
+		return ' Unlucky you loss - please try again';
+	}
+}
 
 //
 
@@ -86,5 +140,6 @@ function countDown(event) {
 	if (counter === 0) {
 		id.innerHTML = 'Times up - Next Question';
 	}
-	countDown();
+
+	return countDown();
 }
