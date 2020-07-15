@@ -1,12 +1,16 @@
 let player;
 
-let score = 0
+let numWrongQuestions = 0;
+
+let score = 0;
 
 let url = 'https://ajayakv-rest-countries-v1.p.rapidapi.com/rest/v1/all';
 
 let countries = [];
 
 let countriesCapitals = [];
+
+let questionNumber = 0;
 
 fetch('https://ajayakv-rest-countries-v1.p.rapidapi.com/rest/v1/all', {
 	method: 'GET',
@@ -37,6 +41,7 @@ fetch('https://ajayakv-rest-countries-v1.p.rapidapi.com/rest/v1/all', {
 		selectedAnswer();
 		keepScore();
 		nextQuestion();
+		resetHandler();
 	})
 	.catch((err) => {
 		//console.log(err);
@@ -59,16 +64,15 @@ function getGameStarted(event) {
 const question = document.querySelector('.CapitalCity');
 let currentQuestion;
 
-let currentQ = ""
-let currentA = ""
+let currentQ = '';
+let currentA = '';
 
 function getQuestion() {
 	currentQuestion = Math.floor(Math.random() * countriesCapitals.length);
 
+	currentQ = countriesCapitals[currentQuestion].capital;
 
-currentQ = countriesCapitals[currentQuestion].capital
-
-currentA = countriesCapitals[currentQuestion].cont
+	currentA = countriesCapitals[currentQuestion].cont;
 	question.innerHTML = `${countriesCapitals[currentQuestion].capital} is the capital of`;
 }
 
@@ -112,26 +116,33 @@ answer.addEventListener('click', selectedAnswer);
 
 function selectedAnswer() {
 	let buttonClicked = event.target.dataset.name;
-console.log(event.target.innerText);
-if (event.target.innerText === currentA){
-    score += 10
-}
-console.log(score)
-    
-    getQuestion()
-    getAnswerOptions()
-}
+	if (event.target.innerText === currentA) {
+		score += 10;
+	} else {
+		numWrongQuestions++;
+		if (numWrongQuestions > 5) {
+			alert('You lost!');
+		}
+	}
+	questionNumber += 1;
+	document.getElementById('score').innerHTML = score;
+	document.getElementById('question number').innerHTML = questionNumber;
 
-//const answeredQuestion = document.querySelector(".buttons")
-
-//answeredQuestion.addEventListener('click', resultHandler)
-
-function resultHandler() {
-
-    
+	getQuestion();
+	getAnswerOptions();
 }
 
+let resetButton = document.getElementById('reset button');
 
+resetButton.addEventListener('click', resetHandler);
+
+function resetHandler() {
+	score = 0;
+	document.getElementById('score').innerHTML = score;
+	questionNumber = 0;
+	document.getElementById('question number').innerHTML = questionNumber;
+}
+resetHandler();
 //
 
 //this will recorded the score and add 1 everytime the player gets one correct
@@ -140,13 +151,13 @@ function resultHandler() {
 //let scoreKeeper = 0;
 
 //function keepScore() {
-	//if (answer == question) {
-	//	scoreKeeper += 10;
-	//	document.getElementById('score').innerHTML = score;
-	//} else {
-	//	scoreKeeper += 0;
-	//	document.getElementById('score').innerHTML = score;
-	//}
+//if (answer == question) {
+//	scoreKeeper += 10;
+//	document.getElementById('score').innerHTML = score;
+//} else {
+//	scoreKeeper += 0;
+//	document.getElementById('score').innerHTML = score;
+//}
 //}
 
 //
