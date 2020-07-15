@@ -141,6 +141,7 @@ function resetHandler() {
 	document.getElementById('score').innerHTML = score;
 	questionNumber = 0;
 	document.getElementById('question number').innerHTML = questionNumber;
+	numWrongQuestions = 0;
 }
 resetHandler();
 //
