@@ -1,5 +1,7 @@
 let player;
 
+let score = 0
+
 let url = 'https://ajayakv-rest-countries-v1.p.rapidapi.com/rest/v1/all';
 
 let countries = [];
@@ -32,6 +34,9 @@ fetch('https://ajayakv-rest-countries-v1.p.rapidapi.com/rest/v1/all', {
 		getQuestion();
 		getAnswerOptions();
 		countDown();
+		selectedAnswer();
+		keepScore();
+		nextQuestion();
 	})
 	.catch((err) => {
 		//console.log(err);
@@ -51,26 +56,46 @@ function getGameStarted(event) {
 
 //const choicesAnswers = Array.from(document.getElementsByClassName('buttons'));
 //console.log(countriesCapitals);
+const question = document.querySelector('.CapitalCity');
+let currentQuestion;
+
+let currentQ = ""
+let currentA = ""
 
 function getQuestion() {
-	const getCapitalForQuestion = document.querySelector('.CapitalCity');
+	currentQuestion = Math.floor(Math.random() * countriesCapitals.length);
 
-	getCapitalForQuestion.innerHTML = `${countriesCapitals[0].capital} is the capital of`;
 
-	//for (let i = 0; i < countriesCapitals.capitals.length; i++) {}
+currentQ = countriesCapitals[currentQuestion].capital
+
+currentA = countriesCapitals[currentQuestion].cont
+	question.innerHTML = `${countriesCapitals[currentQuestion].capital} is the capital of`;
 }
+
+//console.log(question)
 //getQuestion()
+let answerA = document.querySelector('#A');
+let answerB = document.querySelector('#B');
+let answerC = document.querySelector('#C');
+let answerD = document.querySelector('#D');
 
 function getAnswerOptions() {
-	let answerA = document.querySelector('#A');
-	let answerB = document.querySelector('#B');
-	let answerC = document.querySelector('#C');
-	let answerD = document.querySelector('#D');
+	let answers = [countriesCapitals[currentQuestion].cont];
 
-	answerA.innerHTML = `${countriesCapitals[0].cont}`;
-	answerB.innerHTML = `${countriesCapitals[120].cont}`;
-	answerC.innerHTML = `${countriesCapitals[96].cont}`;
-	answerD.innerHTML = `${countriesCapitals[200].cont}`;
+	for (let i = 0; i < 3; i++) {
+		const randomNumber = Math.floor(Math.random() * countriesCapitals.length);
+		const country = countriesCapitals[randomNumber].cont;
+		answers.push(country);
+	}
+
+	answers.sort((a, b) => 0.5 - Math.random());
+
+	answerA.innerText = answers[0];
+	answerB.innerText = answers[1];
+	answerC.innerText = answers[2];
+	answerD.innerText = answers[3];
+
+	//console.log(answers);
 }
 
 //
@@ -81,45 +106,61 @@ function getAnswerOptions() {
 
 //let questionAnswered = true;
 
-const answer = document.querySelectorAll('.buttons');
+let answer = document.querySelector('.answerbuttons');
 
 answer.addEventListener('click', selectedAnswer);
 
-function selectedAnswer(event) {
-	const buttonClicked = event.target.data - set;
-
-	if (buttonClicked === 'A') {
-		style.background = 'red';
-	}
-	if (buttonClicked === 'B') {
-		style.background = 'blue';
-	}
-	if (buttonClicked === 'C') {
-		style.background = 'green';
-	}
-	if (buttonClicked === 'D') {
-		style.background = 'yellow';
-	}
+function selectedAnswer() {
+	let buttonClicked = event.target.dataset.name;
+console.log(event.target.innerText);
+if (event.target.innerText === currentA){
+    score += 10
 }
+console.log(score)
+    
+    getQuestion()
+    getAnswerOptions()
+}
+
+//const answeredQuestion = document.querySelector(".buttons")
+
+//answeredQuestion.addEventListener('click', resultHandler)
+
+function resultHandler() {
+
+    
+}
+
 
 //
 
-// this will recorded the score and add 1 everytime the player gets one correct
+//this will recorded the score and add 1 everytime the player gets one correct
 // if question is answered correctly increment by 1
 
-let scoreKeeper = 0;
+//let scoreKeeper = 0;
 
-function keepScore() {
-	if ((questionAnswered = true)) {
-		scoreKeeper += 10;
-		document.getElementById('score').innerHTML = score;
-	} else {
-		scoreKeeper += 0;
-		document.getElementById('score').innerHTML = score;
-	}
-}
+//function keepScore() {
+	//if (answer == question) {
+	//	scoreKeeper += 10;
+	//	document.getElementById('score').innerHTML = score;
+	//} else {
+	//	scoreKeeper += 0;
+	//	document.getElementById('score').innerHTML = score;
+	//}
+//}
 
 //
+
+/// This function will move the questions on without have to refresh
+
+/*let questionCounter = document.createElement('p');
+
+let questionNumber = 0;
+
+function nextQuestion() {
+	questionNumber++;
+	questionCounter.innerText = questionNumber;
+}
 
 // This will signal that the game has finished
 // inform of win or lose and show percentage of correct answers
@@ -129,6 +170,8 @@ function keepScore() {
 //} else{
 // dont display
 //}
+
+const maxQuestions = 20;
 
 function endGame() {
 	if (scoreKeeper > 15) {
@@ -160,3 +203,4 @@ function countDown(event) {
 
 	return countDown();
 }
+*/
