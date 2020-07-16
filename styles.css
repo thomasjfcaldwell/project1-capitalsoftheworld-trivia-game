@@ -56,21 +56,11 @@ body {
 }
 
 .answerbuttons {
-	width: 90% ;
 	display: grid;
 	margin: 0 auto;
 	grid-template-rows: 30% 30% 30% 30%;
 	padding: 1em;
-	grid-gap: 2em;
-	
-}
-.buttons{
-	background-color: tomato;
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	font-size: 0.9em;
-	text-transform: uppercase;
-	color: white;
-	font-weight: 500;
+	grid-gap: 2.2em;
 }
 
 .startbutton {
