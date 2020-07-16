@@ -48,13 +48,13 @@ fetch('https://ajayakv-rest-countries-v1.p.rapidapi.com/rest/v1/all', {
 	});
 //console.log(countriesCapitals);
 // This button will invoke the first question
-let startButton = document.querySelector('.startbutton');
+//let startButton = document.querySelector('.startbutton');
 
-startButton.addEventListener('click', getGameStarted);
+//startButton.addEventListener('click', getGameStarted);
 
-function getGameStarted(event) {
-	startButton.style.display = 'none';
-}
+//function getGameStarted(event) {
+	//startButton.style.display = 'none';
+//}
 //
 
 // These function will bring in 4 different answers- 1 being the correct answer and the question
@@ -118,6 +118,7 @@ function selectedAnswer() {
 	let buttonClicked = event.target.dataset.name;
 	if (event.target.innerText === currentA) {
 		score += 10;
+		if (score ===100 ) console.log('you win!');
 	} else {
 		numWrongQuestions++;
 		if (numWrongQuestions > 5) {
@@ -127,6 +128,7 @@ function selectedAnswer() {
 	questionNumber += 1;
 	document.getElementById('score').innerHTML = score;
 	document.getElementById('question number').innerHTML = questionNumber;
+	document.getElementById('wrong answers').innerHTML = numWrongQuestions;
 
 	getQuestion();
 	getAnswerOptions();
@@ -141,7 +143,8 @@ function resetHandler() {
 	document.getElementById('score').innerHTML = score;
 	questionNumber = 0;
 	document.getElementById('question number').innerHTML = questionNumber;
-	numWrongQuestions = 0;
+    numWrongQuestions = 0;
+    document.getElementById('wrong answers').innerHTML = numWrongQuestions;
 }
 resetHandler();
 //
