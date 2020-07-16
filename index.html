@@ -7,6 +7,7 @@
 		<title>Capital Cities Of The World</title>
 	</head>
 	<body>
+		<div id = "wrapper"></div>
 		<header>
 			<h1 id="headergame">Capital Cities Of The World</h1>
 			<img
@@ -15,29 +16,60 @@
 				alt="game heading"
 			/>
 		</header>
-		<div class ="gameinfo">
-		<p class="gameinfobuttons">score</p>
-		<p class="gameinfobuttons">question <br>Number</p>
-		<p class="gameinfobuttons">questions<br> wrong</p>
+		<div class="gameinfo">
+			<p class="gameinfobuttons">score</p>
+			<p class="gameinfobuttons">question <br />Number</p>
+			<p class="gameinfobuttons">
+				questions<br />
+				wrong
+			</p>
 		</div>
-	
+
 		<div class="toparea">
 			<div class="topbuttons" id="score">score</div>
-			<div class="topbuttons"  id="question number">question</div>
+			<div class="topbuttons" id="question number">question</div>
 			<div class="topbuttons" id="wrong answers">Wrong Answers</div>
 			<div class="topbuttons" id="reset button">Reset</div>
 		</div>
+
+		<section id = 'winnermessage'>
+			<iframe src="https://giphy.com/embed/cOtvwSHKaFK3Ul1VVu" width="480" height="270" frameBorder="0" class="giphy-embed"
+				allowFullScreen></iframe>
+			<p><a href="https://giphy.com/gifs/memecandy-cOtvwSHKaFK3Ul1VVu"></a></p>
+			<h2>Wow you know your capital cities alright</h2>
+			<a href=https://youtu.be/ub82Xb1C8os> click here </a> to claim your prize</a>
+		</section>
+
+		<section id ='loosermessage'>
+			<iframe src="https://giphy.com/embed/10h8CdMQUWoZ8Y" width="780" height="470" frameBorder="0" class="giphy-embed"
+				allowFullScreen></iframe>
+			<p><a href="https://giphy.com/gifs/someone-idea-lurker-10h8CdMQUWoZ8Y"></a></p>
+		</section>
+
 
 		<section id="question">
 			<div class="CapitalCity"></div>
 		</section>
 
 		<section class="answerbuttons">
-			<button class="buttons" id="A" data-name="A">ANSWER A</button>
-			<button class="buttons" id="B" data-name="B">ANSWER B</button>
-			<button class="buttons" id="C" data-name="C">ANSWER C</button>
-			<button class="buttons" id="D" data-name="D">ANSWER D</button>
+			<button class="buttons stylebuttons"  id="A" data-name="A">ANSWER A</button>
+			<button class="button stylebuttons"  id="B" data-name="B">ANSWER B</button>
+			<button class="button stylebuttons"  id="C" data-name="C">ANSWER C</button>
+			<button class="buttons stylebuttons" id="D" data-name="D">ANSWER D</button>
 		</section>
+
+		<section id ="rules"></section>
+		<h1 class ='rulesofgame'>How to play</h1>
+
+			<li class = "rulesofgame">first question is ready</li>
+			<li class = "rulesofgame">Choose from the 4 options what you think the correct city is</li>
+			<li class = "rulesofgame">10 points for each correct answer</li>
+			<li class = "rulesofgame">You are only allowed 5 incorrect answers</li>
+			<li class = "rulesofgame">Get to 100 points before your chances run out</li>
+			<li class = "rulesofgame">Have fun and learn</li>
+
+
+		</div>
 
 		<script src="script.js"></script>
 	</body>

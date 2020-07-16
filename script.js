@@ -1,4 +1,4 @@
-let player;
+let player; // These are my varibles for the functions of the game
 
 let numWrongQuestions = 0;
 
@@ -12,6 +12,8 @@ let countriesCapitals = [];
 
 let questionNumber = 0;
 
+// Below is where I brought in the data to fill fil the questions
+
 fetch('https://ajayakv-rest-countries-v1.p.rapidapi.com/rest/v1/all', {
 	method: 'GET',
 	headers: {
@@ -21,20 +23,19 @@ fetch('https://ajayakv-rest-countries-v1.p.rapidapi.com/rest/v1/all', {
 })
 	.then((response) => {
 		return response.json();
-	})
+	}) // this is me bringing in the data and separating the counties and capitals in to objects
 	.then((response) => {
 		countries = response;
 		for (country of countries) {
-			//console.log(country);
 			let pair = {
 				cont: country.name,
 				capital: country.capital,
 			};
 			countriesCapitals.push(pair);
-			//console.log(pair.capital);
 		}
 	})
 	.then((reponse) => {
+		// This is me calling the functions that need to be in the outside scope
 		getQuestion();
 		getAnswerOptions();
 		countDown();
@@ -43,24 +44,8 @@ fetch('https://ajayakv-rest-countries-v1.p.rapidapi.com/rest/v1/all', {
 		nextQuestion();
 		resetHandler();
 	})
-	.catch((err) => {
-		//console.log(err);
-	});
-//console.log(countriesCapitals);
-// This button will invoke the first question
-//let startButton = document.querySelector('.startbutton');
+	.catch((err) => {});
 
-//startButton.addEventListener('click', getGameStarted);
-
-//function getGameStarted(event) {
-	//startButton.style.display = 'none';
-//}
-//
-
-// These function will bring in 4 different answers- 1 being the correct answer and the question
-
-//const choicesAnswers = Array.from(document.getElementsByClassName('buttons'));
-//console.log(countriesCapitals);
 const question = document.querySelector('.CapitalCity');
 let currentQuestion;
 
@@ -68,6 +53,7 @@ let currentQ = '';
 let currentA = '';
 
 function getQuestion() {
+	// This is where I filled the question and did a method so they are different each time. Also to make sure the correct answer is available
 	currentQuestion = Math.floor(Math.random() * countriesCapitals.length);
 
 	currentQ = countriesCapitals[currentQuestion].capital;
@@ -75,14 +61,13 @@ function getQuestion() {
 	currentA = countriesCapitals[currentQuestion].cont;
 	question.innerHTML = `${countriesCapitals[currentQuestion].capital} is the capital of`;
 }
-
-//console.log(question)
-//getQuestion()
+// this is me bringing in the buttons from the html file
 let answerA = document.querySelector('#A');
 let answerB = document.querySelector('#B');
 let answerC = document.querySelector('#C');
 let answerD = document.querySelector('#D');
 
+// This is me bringing in the options for the answers. I also had to do a sort method so that that the answers were different buttons each time.
 function getAnswerOptions() {
 	let answers = [countriesCapitals[currentQuestion].cont];
 
@@ -92,24 +77,15 @@ function getAnswerOptions() {
 		answers.push(country);
 	}
 
-	answers.sort((a, b) => 0.5 - Math.random());
+	answers.sort((a, b) => 0.5 - Math.random()); // here
 
 	answerA.innerText = answers[0];
 	answerB.innerText = answers[1];
 	answerC.innerText = answers[2];
 	answerD.innerText = answers[3];
-
-	//console.log(answers);
 }
 
-//
-
-// this function will reconize what button was pressed  if the the question was correctly answered
-
-// players choice is === to the correct answer
-
-//let questionAnswered = true;
-
+// this is where we add the point and move the questions along. Also giving out winning messages and losing ones
 let answer = document.querySelector('.answerbuttons');
 
 answer.addEventListener('click', selectedAnswer);
@@ -118,11 +94,12 @@ function selectedAnswer() {
 	let buttonClicked = event.target.dataset.name;
 	if (event.target.innerText === currentA) {
 		score += 10;
-		if (score ===100 ) console.log('you win!');
+		if (score === 100)
+			document.getElementById('winnermessage').style.display = 'block';
 	} else {
 		numWrongQuestions++;
 		if (numWrongQuestions > 5) {
-			alert('You lost!');
+			document.getElementById('loosermessage').style.display = 'block';
 		}
 	}
 	questionNumber += 1;
@@ -134,6 +111,8 @@ function selectedAnswer() {
 	getAnswerOptions();
 }
 
+// this is where we make sure everything gets reset when the game is over.
+
 let resetButton = document.getElementById('reset button');
 
 resetButton.addEventListener('click', resetHandler);
@@ -143,68 +122,14 @@ function resetHandler() {
 	document.getElementById('score').innerHTML = score;
 	questionNumber = 0;
 	document.getElementById('question number').innerHTML = questionNumber;
-    numWrongQuestions = 0;
-    document.getElementById('wrong answers').innerHTML = numWrongQuestions;
+	numWrongQuestions = 0;
+	document.getElementById('wrong answers').innerHTML = numWrongQuestions;
+	document.getElementById('winnermessage').style.display = 'none';
+	document.getElementById('loosermessage').style.display = 'none';
 }
 resetHandler();
-//
 
-//this will recorded the score and add 1 everytime the player gets one correct
-// if question is answered correctly increment by 1
-
-//let scoreKeeper = 0;
-
-//function keepScore() {
-//if (answer == question) {
-//	scoreKeeper += 10;
-//	document.getElementById('score').innerHTML = score;
-//} else {
-//	scoreKeeper += 0;
-//	document.getElementById('score').innerHTML = score;
-//}
-//}
-
-//
-
-/// This function will move the questions on without have to refresh
-
-/*let questionCounter = document.createElement('p');
-
-let questionNumber = 0;
-
-function nextQuestion() {
-	questionNumber++;
-	questionCounter.innerText = questionNumber;
-}
-
-// This will signal that the game has finished
-// inform of win or lose and show percentage of correct answers
-
-//if (gameFinished === 20){
-
-//} else{
-// dont display
-//}
-
-const maxQuestions = 20;
-
-function endGame() {
-	if (scoreKeeper > 15) {
-		return 'Well done you Win!';
-	} else {
-		return ' Unlucky you loss - please try again';
-	}
-}
-
-//
-
-// player can press at anytime and score will return to 0
-// restart hit scoreKeeper returns to 0
-
-let restart = 0;
-function restartGame() {}
-
-let counter = 10;
+/*let counter = 10;
 
 function countDown(event) {
 	counter--;

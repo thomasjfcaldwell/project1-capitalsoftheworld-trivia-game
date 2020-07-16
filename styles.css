@@ -7,12 +7,16 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
+#wrapper {
+	padding: 3em;
+}
+
 #headergame {
-	font-size: 1.5em;
+	font-size: 3em;
 	text-align: center;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
-	color: black;
+	color: #79a22d;
 }
 #triviaheader {
 	margin-top: 2em;
@@ -53,6 +57,7 @@ body {
 	padding: 1em;
 	align-items: center;
 	justify-content: center;
+	text-align: center;
 }
 
 .answerbuttons {
@@ -63,9 +68,35 @@ body {
 	grid-gap: 2.2em;
 }
 
+.stylebuttons {
+	background-image: linear-gradient(#faec5f, #f6be47);
+	box-shadow: 0.2em 0.2em 0.8em rgba(0, 0, 0, 0.5);
+}
+#winnermessage {
+	text-align: center;
+	font-size: 1em;
+	display: none;
+}
+
+#loosermessage {
+	display: none;
+	margin: 0 auto;
+	text-align: center;
+}
+
 .startbutton {
 	width: 25%;
 	margin: auto;
 	margin-top: 2em;
 	padding: 0.2em;
+}
+#rules {
+	text-align: center;
+	margin-top: 4em;
+	font-size: 3em;
+}
+
+.rulesofgame {
+	text-align: center;
+	font-size: 2em;
 }
