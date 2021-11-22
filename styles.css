@@ -5,14 +5,15 @@ body {
 	background: url(images/background-for-project-1.1.png);
 	width: 100%;
 	font-family: 'Roboto', sans-serif;
+	font-size: 12px;
 }
 
 #wrapper {
-	padding: 3em;
+	padding: 1em;
 }
 
 #headergame {
-	font-size: 3em;
+	font-size: 1em;
 	text-align: center;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
@@ -37,8 +38,8 @@ body {
 	width: 75%;
 }
 .gameinfobuttons {
-	margin-top: 4em;
-	font-size: 0.4em;
+	margin-top: 1em;
+	font-size: 0.8em;
 	text-transform: uppercase;
 	flex: 1;
 	text-align: center;
@@ -64,7 +65,7 @@ body {
 	display: grid;
 	margin: 0 auto;
 	grid-template-rows: 30% 30% 30% 30%;
-	padding: 1em;
+	padding: 3em;
 	grid-gap: 2.2em;
 }
 
@@ -92,11 +93,11 @@ body {
 }
 #rules {
 	text-align: center;
-	margin-top: 4em;
-	font-size: 3em;
+	margin: 4em;
 }
 
 .rulesofgame {
 	text-align: center;
-	font-size: 2em;
+	font-size: 1em;
+	margin-top: 1em;
 }
