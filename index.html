@@ -7,31 +7,34 @@
 		<title>Capital Cities Of The World</title>
 	</head>
 	<body>
-		<div id = "wrapper"></div>
+		<div id = "wrapper">
 		<header>
-			<h1 id="headergame">Capital Cities Of The World</h1>
 			<img
 				id="triviaheader"
-				src="images/trivia-game-heading.1.png"
+				src="images/Asset 1.png"
 				alt="game heading"
 			/>
 		</header>
 		<div class="gameinfo">
-			<p class="gameinfobuttons">score</p>
+			<div class="gameinfobutton-container">
+				<p class="gameinfobuttons">score</p>
+				<div class="topbuttons" id="score">score</div>
+			</div>
+			<div class="gameinfobutton-container">
 			<p class="gameinfobuttons">question <br />Number</p>
+			<div class="topbuttons" id="question number">question</div>
+			</div>
+			<div class="gameinfobutton-container">
 			<p class="gameinfobuttons">
 				questions<br />
 				wrong
 			</p>
-		</div>
-
-		<div class="toparea">
-			<div class="topbuttons" id="score">score</div>
-			<div class="topbuttons" id="question number">question</div>
 			<div class="topbuttons" id="wrong answers">Wrong Answers</div>
-			<div class="topbuttons" id="reset button">Reset</div>
+			</div>
+			<div class="gameinfobutton-container">
+              <div class="topbuttons" id="reset button">Reset</div>
+			</div>
 		</div>
-
 		<section id = 'winnermessage'>
 			<iframe src="https://giphy.com/embed/cOtvwSHKaFK3Ul1VVu" width="480" height="270" frameBorder="0" class="giphy-embed"
 				allowFullScreen></iframe>
@@ -46,7 +49,7 @@
 			<p><a href="https://giphy.com/gifs/someone-idea-lurker-10h8CdMQUWoZ8Y"></a></p>
 		</section>
 
-
+<div class="question__box">
 		<section id="question">
 			<div class="CapitalCity"></div>
 		</section>
@@ -57,9 +60,10 @@
 			<button class="button stylebuttons"  id="C" data-name="C">ANSWER C</button>
 			<button class="buttons stylebuttons" id="D" data-name="D">ANSWER D</button>
 		</section>
+		</div>
 
-		<section id ="rules">
-		<h1 class ='rulesofgame'>How to play</h1>
+		<section id ="rules"></section>
+		<!-- <h1 class ='rulesofgame'>How to play</h1>
 
 			<li class = "rulesofgame">first question is ready</li>
 			<li class = "rulesofgame">Choose from the 4 options what you think the correct city is</li>
@@ -69,8 +73,9 @@
 			<li class = "rulesofgame">Have fun and learn</li>
 </section>
 
-		</div>
+		</div> -->
 
 		<script src="script.js"></script>
+		</div>
 	</body>
 </html>

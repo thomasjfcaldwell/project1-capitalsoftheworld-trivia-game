@@ -1,16 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,400&display=swap');
 
 body {
-	margin: auto 0;
-	background: url(images/background-for-project-1.1.png);
+	margin-inline: auto;
+	background: #061D38;
 	width: 100%;
 	font-family: 'Roboto', sans-serif;
 	font-size: 12px;
 }
 
-#wrapper {
-	padding: 1em;
+#wrapper{
+	width: calc(100% - 30px);
+	margin-inline: auto;
 }
+
 
 #headergame {
 	font-size: 1em;
@@ -27,34 +29,43 @@ body {
 	width: 75%;
 }
 
-.toparea {
-	display: flex;
-	flex-direction: row;
-	width: 100%;
-}
 .gameinfo {
 	display: flex;
 	flex-direction: row;
-	width: 75%;
+	width: 100%;
+	justify-content: space-around;
+	margin-top: 20px;
 }
 .gameinfobuttons {
-	margin-top: 1em;
-	font-size: 0.8em;
+	font-size: 0.4em;
 	text-transform: uppercase;
 	flex: 1;
 	text-align: center;
+	color:aliceblue;
+	height: 3rem;
+}
+.gameinfobutton-container{
+	background-color: aquamarine;
+	display: flex;
+	flex-direction: column;
+	padding: 5px 10px;
+	border-radius: 5px;
+	width: 15%;
+	margin: 1rem 0;
 }
 .topbuttons {
-	padding: 1em;
 	font-size: 1em;
 	text-transform: uppercase;
 	flex: 1;
 	text-align: center;
-	text-decoration: underline;
+	color:aliceblue;
+}
+.question__box{
+	background-color: azure;
 }
 #question {
 	border: 2px black solid;
-	margin: 1em 2em 1em 2em;
+	/* margin: 1em 2em 1em 2em; */
 	padding: 1em;
 	align-items: center;
 	justify-content: center;
@@ -65,8 +76,8 @@ body {
 	display: grid;
 	margin: 0 auto;
 	grid-template-rows: 30% 30% 30% 30%;
-	padding: 3em;
-	grid-gap: 2.2em;
+	padding: 1em;
+	grid-gap: 0.1em;
 }
 
 .stylebuttons {

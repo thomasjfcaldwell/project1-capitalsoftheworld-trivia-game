@@ -4,7 +4,7 @@ let numWrongQuestions = 0;
 
 let score = 0;
 
-let url = 'https://ajayakv-rest-countries-v1.p.rapidapi.com/rest/v1/all';
+let url = 'https://restcountries.com/v3.1/all';
 
 let countries = [];
 
@@ -14,18 +14,15 @@ let questionNumber = 0;
 
 // Below is where I brought in the data to fill fil the questions
 
-fetch('https://ajayakv-rest-countries-v1.p.rapidapi.com/rest/v1/all', {
+fetch(`${url}`, {
 	method: 'GET',
-	headers: {
-		'x-rapidapi-host': 'ajayakv-rest-countries-v1.p.rapidapi.com',
-		'x-rapidapi-key': '9dad7becddmsh6715395af5b4c35p10b3fejsn35d607ff9598',
-	},
 })
 	.then((response) => {
 		return response.json();
 	}) // this is me bringing in the data and separating the counties and capitals in to objects
 	.then((response) => {
 		countries = response;
+		console.log(countries);
 		for (country of countries) {
 			let pair = {
 				cont: country.name,
@@ -44,7 +41,9 @@ fetch('https://ajayakv-rest-countries-v1.p.rapidapi.com/rest/v1/all', {
 		nextQuestion();
 		resetHandler();
 	})
-	.catch((err) => {});
+	.catch((err) => {
+		console.log(err);
+	});
 
 const question = document.querySelector('.CapitalCity');
 let currentQuestion;
@@ -58,7 +57,8 @@ function getQuestion() {
 
 	currentQ = countriesCapitals[currentQuestion].capital;
 
-	currentA = countriesCapitals[currentQuestion].cont;
+	currentA = countriesCapitals[currentQuestion].cont.common;
+	console.log(currentA);
 	question.innerHTML = `${countriesCapitals[currentQuestion].capital} is the capital of`;
 }
 // this is me bringing in the buttons from the html file
@@ -69,11 +69,11 @@ let answerD = document.querySelector('#D');
 
 // This is me bringing in the options for the answers. I also had to do a sort method so that that the answers were different buttons each time.
 function getAnswerOptions() {
-	let answers = [countriesCapitals[currentQuestion].cont];
+	let answers = [countriesCapitals[currentQuestion].cont.common];
 
 	for (let i = 0; i < 3; i++) {
 		const randomNumber = Math.floor(Math.random() * countriesCapitals.length);
-		const country = countriesCapitals[randomNumber].cont;
+		const country = countriesCapitals[randomNumber].cont.common;
 		answers.push(country);
 	}
 
