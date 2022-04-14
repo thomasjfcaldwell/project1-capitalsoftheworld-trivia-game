@@ -22,11 +22,11 @@ body {
 	color: #79a22d;
 }
 #triviaheader {
-	margin-top: 2em;
+	margin-top:0.5rem;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	width: 75%;
+	width: 70%;
 }
 
 .gameinfo {
@@ -52,6 +52,7 @@ body {
 	border-radius: 5px;
 	width: 15%;
 	margin: 1rem 0;
+	box-shadow: 0.2em 0.2em 0.8em rgba(255, 255, 255, 0.2);
 }
 .topbuttons {
 	font-size: 1em;
@@ -72,14 +73,14 @@ body {
 .question__box{
 	background-color: #8F02FF;
 	width:90%;
-	height: 380px;
+	height: 350px;
 	border-radius: 10px;
 	padding: 0.5rem;
 	margin-inline: auto;
 }
 #question {
 	background-color: aliceblue;
-	height: 150px;
+	height: 120px;
 	border-radius: 5px;
 	display: flex;
 	align-items: center;
@@ -137,4 +138,55 @@ body {
 	text-align: center;
 	font-size: 1em;
 	margin-top: 1em;
+}
+
+/* The Modal (background) */
+.modal {
+	display: none;
+	/* Hidden by default */
+	position: fixed;
+	/* Stay in place */
+	z-index: 1;
+	/* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%;
+	/* Full width */
+	height: 100%;
+	/* Full height */
+	overflow: auto;
+	/* Enable scroll if needed */
+	background-color: rgb(0, 0, 0);
+	/* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4);
+	/* Black w/ opacity */
+}
+.modal-button{
+	margin:0.5rem;
+}
+
+/* Modal Content/Box */
+.modal-content {
+	background-color: #fefefe;
+	margin: 15% auto;
+	/* 15% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+	/* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
 }
