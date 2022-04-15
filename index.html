@@ -8,81 +8,82 @@
 	</head>
 	<body>
 		<div id = "wrapper">
-	<button id="myBtn" class="modal-button">RULES</button>
-	<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-     <section id ="rules">
-		<h1 class ='rulesofgame'>How to play</h1>
-
-			<li class = "rulesofgame">first question is ready</li>
-			<li class = "rulesofgame">Choose from the 4 options what you think the correct city is</li>
-			<li class = "rulesofgame">10 points for each correct answer</li>
-			<li class = "rulesofgame">You are only allowed 5 incorrect answers</li>
-			<li class = "rulesofgame">Get to 100 points before your chances run out</li>
-			<li class = "rulesofgame">Have fun and learn</li>
-	</section>
-  </div>
-
-</div>
-		<header>
-			<img
-				id="triviaheader"
-				src="images/Asset 1.png"
-				alt="game heading"
-			/>
-		</header>
-		<div class="gameinfo">
-			<div class="gameinfobutton-container">
-				<p class="gameinfobuttons">score</p>
-				<div class="topbuttons" id="score">score</div>
+			<!-- Model button-->
+			<button id="myBtn" class="modal-button">RULES</button>
+			<!-- Modal content -->
+			<div id="myModal" class="modal">			
+				<div class="modal-content">
+					<span class="close">&times;</span>
+						<section id ="rules">
+							<h2 class ='rulesofgame-header'>How to play</h2>
+								<li class = "rulesofgame">first question is ready</li>
+								<li class = "rulesofgame">Choose from the 4 options what you think the correct city is</li>
+								<li class = "rulesofgame">10 points for each correct answer</li>
+								<li class = "rulesofgame">You are only allowed 5 incorrect answers</li>
+								<li class = "rulesofgame">Get to 100 points before your chances run out</li>
+								<li class = "rulesofgame">Have fun and learn</li>
+						</section>
+				</div>
 			</div>
-			<div class="gameinfobutton-container">
-			<p class="gameinfobuttons">question <br />Number</p>
-			<div class="topbuttons" id="question number">question</div>
+			<!-- HEADER content -->
+			<header>
+				<img
+					class="game-title"
+					src="images/Asset 1.png"
+					alt="game heading"
+				/>
+			</header>
+			<!-- SCOREBOARD content -->
+			<div class="gameinfo">
+				<div class="gameinfobutton-container">
+					<p class="gameinfobuttons">score</p>
+					<div class="topbuttons" id="score">score</div>
+				</div>
+
+				<div class="gameinfobutton-container">
+					<p class="gameinfobuttons">question <br />Number</p>
+					<div class="topbuttons" id="question number">question</div>
+				</div>
+
+				<div class="gameinfobutton-container">
+					<p class="gameinfobuttons">questions<br />wrong</p>
+					<div class="topbuttons" id="wrong answers">Wrong Answers</div>
+				</div>
+
+				<div class="gameinfobutton-container">
+					<div class="gameinfobuttons-reset" id="reset button">Reset</div>
+				</div>
 			</div>
-			<div class="gameinfobutton-container">
-			<p class="gameinfobuttons">
-				questions<br />
-				wrong
-			</p>
-			<div class="topbuttons" id="wrong answers">Wrong Answers</div>
+			<!-- WINNER MESSAGE -->
+			<section id='winnermessage'>
+				<iframe src="https://giphy.com/embed/cOtvwSHKaFK3Ul1VVu" width="220" height="135" frameBorder="0" class="giphy-embed"allowFullScreen>
+				</iframe>
+				<p><a href="https://giphy.com/gifs/memecandy-cOtvwSHKaFK3Ul1VVu"></a></p>
+				<h2>Wow you know your capital cities alright</h2>
+				<a href=https://youtu.be/ub82Xb1C8os> click here to claim your prize</a>
+			</section>
+
+			<!-- LOOSER MESSAGE -->
+			<section id ='loosermessage'>
+					<iframe src="https://giphy.com/embed/10h8CdMQUWoZ8Y" width="260" height="157" frameBorder="0" class="giphy-embed"allowFullScreen></iframe>
+					<p><a href="https://giphy.com/gifs/someone-idea-lurker-10h8CdMQUWoZ8Y"></a></p>
+			</section>
+			<!-- QUESTION AND ANSWER SECTION -->
+			<div class="question__box">
+			<!-- QUESTION SECTION -->
+				<section id="question">
+					<div class="CapitalCity"></div>
+				</section>
+			<!-- ANSWER SECTION -->
+				<section class="answerbuttons">
+					<button class="buttons stylebuttons"  id="A" data-name="A">ANSWER A</button>
+					<button class="button stylebuttons"  id="B" data-name="B">ANSWER B</button>
+					<button class="button stylebuttons"  id="C" data-name="C">ANSWER C</button>
+					<button class="buttons stylebuttons" id="D" data-name="D">ANSWER D</button>
+				</section>
 			</div>
-			<div class="gameinfobutton-container">
-              <div class="gameinfobuttons-reset" id="reset button">Reset</div>
-			</div>
-		</div>
-		<section id='winnermessage'>
-			<iframe src="https://giphy.com/embed/cOtvwSHKaFK3Ul1VVu" width="220" height="135" frameBorder="0" class="giphy-embed"
-				allowFullScreen></iframe>
-			<p><a href="https://giphy.com/gifs/memecandy-cOtvwSHKaFK3Ul1VVu"></a></p>
-			<h2>Wow you know your capital cities alright</h2>
-			<a href=https://youtu.be/ub82Xb1C8os> click here to claim your prize</a>
-		</section>
-
-		<section id ='loosermessage'>
-			<iframe src="https://giphy.com/embed/10h8CdMQUWoZ8Y" width="260" height="157" frameBorder="0" class="giphy-embed"
-				allowFullScreen></iframe>
-			<p><a href="https://giphy.com/gifs/someone-idea-lurker-10h8CdMQUWoZ8Y"></a></p>
-		</section>
-
-		<div class="question__box">
-		<section id="question">
-			<div class="CapitalCity"></div>
-		</section>
-
-		<section class="answerbuttons">
-			<button class="buttons stylebuttons"  id="A" data-name="A">ANSWER A</button>
-			<button class="button stylebuttons"  id="B" data-name="B">ANSWER B</button>
-			<button class="button stylebuttons"  id="C" data-name="C">ANSWER C</button>
-			<button class="buttons stylebuttons" id="D" data-name="D">ANSWER D</button>
-		</section>
-		</div>
-		</div>
-
-		<script src="script.js"></script>
+			<!-- SCRIPT TAG FOR JAVASCRIPT -->
+			<script src="script.js"></script>
 		</div>
 	</body>
 </html>

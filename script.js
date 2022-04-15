@@ -22,12 +22,12 @@ fetch(`${url}`, {
 	}) // this is me bringing in the data and separating the counties and capitals in to objects
 	.then((response) => {
 		countries = response;
-		console.log(countries);
 		for (country of countries) {
 			let pair = {
 				cont: country.name,
 				capital: country.capital,
 			};
+			// console.log(pair);
 			countriesCapitals.push(pair);
 		}
 	})
@@ -54,11 +54,12 @@ let currentA = '';
 function getQuestion() {
 	// This is where I filled the question and did a method so they are different each time. Also to make sure the correct answer is available
 	currentQuestion = Math.floor(Math.random() * countriesCapitals.length);
+	console.log(currentQuestion);
 
 	currentQ = countriesCapitals[currentQuestion].capital;
+	console.log(currentQ);
 
 	currentA = countriesCapitals[currentQuestion].cont.common;
-	console.log(currentA);
 	question.innerHTML = `${countriesCapitals[currentQuestion].capital} is the capital of`;
 }
 // this is me bringing in the buttons from the html file
@@ -75,6 +76,7 @@ function getAnswerOptions() {
 		const randomNumber = Math.floor(Math.random() * countriesCapitals.length);
 		const country = countriesCapitals[randomNumber].cont.common;
 		answers.push(country);
+		console.log(country);
 	}
 
 	answers.sort((a, b) => 0.5 - Math.random()); // here
@@ -96,6 +98,7 @@ function selectedAnswer() {
 		score += 10;
 		if (score === 100)
 			document.getElementById('winnermessage').style.display = 'block';
+		document.querySelector(('question__box'.style.display = 'none'));
 	} else {
 		numWrongQuestions++;
 		if (numWrongQuestions > 5) {
