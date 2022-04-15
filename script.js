@@ -40,6 +40,7 @@ fetch(`${url}`, {
 		keepScore();
 		nextQuestion();
 		resetHandler();
+		removeQuestion();
 	})
 	.catch((err) => {
 		console.log(err);
@@ -96,12 +97,13 @@ function selectedAnswer() {
 	let buttonClicked = event.target.dataset.name;
 	if (event.target.innerText === currentA) {
 		score += 10;
-		if (score === 100)
-			document.getElementById('winnermessage').style.display = 'block';
-		document.querySelector(('question__box'.style.display = 'none'));
+		if (score === 10)
+			document.getElementById('question__box').style.display = 'none';
+		document.getElementById('winnermessage').style.display = 'block';
 	} else {
 		numWrongQuestions++;
-		if (numWrongQuestions > 5) {
+		if (numWrongQuestions > 1) {
+			document.getElementById('question__box').style.display = 'none';
 			document.getElementById('loosermessage').style.display = 'block';
 		}
 	}
@@ -129,8 +131,15 @@ function resetHandler() {
 	document.getElementById('wrong answers').innerHTML = numWrongQuestions;
 	document.getElementById('winnermessage').style.display = 'none';
 	document.getElementById('loosermessage').style.display = 'none';
+	document.getElementById('question__box').style.display = 'block';
 }
 resetHandler();
+
+let tryAgain = document.getElementById('winner__message-button');
+tryAgain.addEventListener('click', resetHandler);
+
+let tryAgainLooser = document.getElementById('looser__message-button');
+tryAgainLooser.addEventListener('click', resetHandler);
 
 var modal = document.getElementById('myModal');
 

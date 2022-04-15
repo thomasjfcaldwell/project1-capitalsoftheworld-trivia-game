@@ -141,7 +141,7 @@ header{
 	padding: 0;
 	margin-top:20px;
 }
-.question__box{
+#question__box{
 	background-color: #8F02FF;
 	width:90%;
 	height: 400px;
@@ -190,15 +190,61 @@ header{
 	cursor: pointer;
 }
 #winnermessage {
-	text-align: center;
-	font-size: 1em;
 	display: none;
+}
+.gameOver__message {
+	width:90%;
+	height: 400px;
+	background-color: #8F02FF;
+	margin: 0 auto;
+	border-radius: 10px;
+	padding: 0.5rem;
+	
+}
+
+.gameOver__message-container {
+	background-color: #74C2E8;
+	width:80%;
+	height:340px;
+	margin: 2rem auto;
+	border-radius: 10px;
+	display:flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+.gameOver__message-header {
+	width:80%;
+	margin: 10px auto;
+	text-align: center;
+	font-size: 1.65rem;
+	color:aliceblue;
+}
+.gameOver__message-text{
+	width:80%;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 1rem;
+	color:aliceblue;
+}
+#winner__message-button {
+	width:120px;
+	border:none;
+	padding: 5px 10px;
+	border-radius: 5px;
+	margin-inline: auto;
+
+}
+#looser__message-button {
+	width: 120px;
+	border: none;
+	padding: 5px 10px;
+	border-radius: 5px;
+	margin-inline: auto;
+
 }
 
 #loosermessage {
 	display: none;
-	margin: 0 auto;
-	text-align: center;
 }
 
 .startbutton {
