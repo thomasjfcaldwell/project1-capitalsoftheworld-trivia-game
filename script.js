@@ -99,12 +99,12 @@ function selectedAnswer() {
 		score += 10;
 		if (score === 100)
 			document.getElementById('question__box').style.display = 'none';
-		document.getElementById('winnermessage').style.display = 'block';
+		// document.getElementById('winnermessage').style.display = 'block';
 	} else {
 		numWrongQuestions++;
 		if (numWrongQuestions > 5) {
 			document.getElementById('question__box').style.display = 'none';
-			document.getElementById('loosermessage').style.display = 'block';
+			// document.getElementById('loosermessage').style.display = 'block';
 		}
 	}
 	questionNumber += 1;

@@ -195,7 +195,7 @@ header{
 	color:aliceblue;
 	cursor: pointer;
 }
-#winnermessage {
+#winner__message {
 	display: none;
 }
 .gameOver__message {
@@ -240,7 +240,7 @@ header{
 	margin-inline: auto;
 	color:#061D38;
 	background-color: aliceblue;
-		font-size: 0.7rem;
+	font-size: 0.7rem;
 
 }
 #looser__message-button {
