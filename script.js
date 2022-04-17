@@ -97,12 +97,12 @@ function selectedAnswer() {
 	let buttonClicked = event.target.dataset.name;
 	if (event.target.innerText === currentA) {
 		score += 10;
-		if (score === 10)
+		if (score === 100)
 			document.getElementById('question__box').style.display = 'none';
 		document.getElementById('winnermessage').style.display = 'block';
 	} else {
 		numWrongQuestions++;
-		if (numWrongQuestions > 1) {
+		if (numWrongQuestions > 5) {
 			document.getElementById('question__box').style.display = 'none';
 			document.getElementById('loosermessage').style.display = 'block';
 		}
