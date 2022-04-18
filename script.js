@@ -88,6 +88,15 @@ function getAnswerOptions() {
 	answerD.innerText = answers[3];
 }
 
+function winnerMessage() {
+	document.getElementById('winnermessage').style.display = 'block';
+	document.getElementById('question__box').style.display = 'none';
+}
+
+function looserMessage() {
+	document.getElementById('loosermessage').style.display = 'block';
+	document.getElementById('question__box').style.display = 'none';
+}
 // this is where we add the point and move the questions along. Also giving out winning messages and losing ones
 let answer = document.querySelector('.answerbuttons');
 
@@ -97,14 +106,11 @@ function selectedAnswer() {
 	let buttonClicked = event.target.dataset.name;
 	if (event.target.innerText === currentA) {
 		score += 10;
-		if (score === 100)
-			document.getElementById('question__box').style.display = 'none';
-		// document.getElementById('winnermessage').style.display = 'block';
+		if (score === 100) return winnerMessage();
 	} else {
 		numWrongQuestions++;
 		if (numWrongQuestions > 5) {
-			document.getElementById('question__box').style.display = 'none';
-			// document.getElementById('loosermessage').style.display = 'block';
+			return looserMessage();
 		}
 	}
 	questionNumber += 1;
