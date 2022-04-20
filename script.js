@@ -41,6 +41,7 @@ fetch(`${url}`, {
 		nextQuestion();
 		resetHandler();
 		removeQuestion();
+		wrongQuestionAlert();
 	})
 	.catch((err) => {
 		console.log(err);
@@ -146,6 +147,8 @@ tryAgain.addEventListener('click', resetHandler);
 
 let tryAgainLooser = document.getElementById('looser__message-button');
 tryAgainLooser.addEventListener('click', resetHandler);
+
+// wrong questions color change
 
 var modal = document.getElementById('myModal');
 
