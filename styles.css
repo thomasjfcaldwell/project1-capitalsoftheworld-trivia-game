@@ -112,7 +112,7 @@ header{
 	margin-top: 20px;
 }
 .gameinfobuttons {
-	font-size: 0.8em;
+	font-size: 0.6em;
 	text-transform: uppercase;
 	flex: 1;
 	text-align: center;
@@ -123,14 +123,14 @@ header{
 	background-color:#74C2E8;
 	display: flex;
 	flex-direction: column;
-	padding: 5px 10px;
+	padding: 0px 5px;
 	border-radius: 5px;
-	width:50px;
+	width:55px;
 	margin: 1rem 0;
 	box-shadow: 0.2em 0.2em 0.8em rgba(255, 255, 255, 0.2);
 }
 .topbuttons {
-	font-size: 0.8em;
+	font-size: 0.9rem;
 	text-transform: uppercase;
 	flex: 1;
 	text-align: center;
@@ -145,6 +145,9 @@ header{
 	padding: 0;
 	margin-top:20px;
 }
+.gameinfobuttons-reset:hover{
+	cursor: pointer;
+}
 #question__box{
 	background-color: #8F02FF;
 	width:90%;
@@ -158,14 +161,14 @@ header{
 }
 #question {
 	background-color: aliceblue;
-	height: 160px;
+	height: 120px;
 	border-radius: 5px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 80%;
+	width: 70%;
 	margin-inline: auto;
-	margin-block: 1rem;
+	margin-block: 2rem;
 	box-shadow: 0.2em 0.2em 0.8em rgba(0, 0, 0, 0.5);
 	color:#061D38;
 }
@@ -175,13 +178,13 @@ header{
 	margin-inline: auto;
 	margin-block: 1rem;
 	grid-template-columns: 1fr 1fr;
-	grid-gap: 0.5em;
+	grid-gap: 1.5em;
 	/* background-color: #79a22d; */
 	width: 90%;
 }
 
 .stylebuttons {
-	height:100px;
+	height:90px;
 	background-color: aliceblue;
 	box-shadow: 0.2em 0.2em 0.8em rgba(0, 0, 0, 0.5);
 	border:none;
